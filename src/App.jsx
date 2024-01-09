@@ -33,17 +33,7 @@ function App() {
       {Object.entries(currentLocation).map(([key, value]) => (
         <div key={key} className="info">
           <Info
-            heading={
-              key === "as"
-                ? ""
-                : key === "location"
-                ? Object.entries(value).map(([subKey, subValue]) =>
-                    subKey === "timezone"
-                      ? (key = "1")
-                      : (key = "2")
-                  )
-                : key
-            }
+            heading={key === "as" ? "" : key}
             dataInfo={
               typeof value === "object"
                 ? key === "location"
