@@ -38,7 +38,28 @@ function App() {
 
       {Object.entries(currentLocation).map(([key, value]) => (
         <div key={key}>
-          {`${key}: `}
+          <Info
+            heading={key}
+            dataInfo={
+              typeof value === "object" ? (
+                key === "location" ? (
+                  <Info
+                    heading={key}
+                    dataInfo={Object.entries(value).map(
+                      ([subKey, subValue]) =>
+                        // <li key={subKey}>{`${subKey}: ${subValue}`}</li>
+                        subValue
+                    )}
+                  />
+                ) : (
+                  ""
+                )
+              ) : (
+                value
+              )
+            }
+          />
+          {/* {`${key}: `}
           {typeof value === "object" ? (
             <ul>
               {Object.entries(value).map(([subKey, subValue]) => (
@@ -47,7 +68,7 @@ function App() {
             </ul>
           ) : (
             value
-          )}
+          )} */}
         </div>
       ))}
 
