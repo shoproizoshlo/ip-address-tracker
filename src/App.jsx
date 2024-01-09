@@ -1,21 +1,25 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import axios from "axios";
 import Arrow from "./assets/icon-arrow.svg";
 import Info from "./components/Info";
-import locationService from "./service/location";
+import "./App.css";
 
 function App() {
-  const [currentLocation, setCurrentLocation] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    locationService
-      .getAll()
-      .then((initialLocation) => {
-        setCurrentLocation(initialLocation);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://geo.ipify.org/api/v2/country?apiKey=at_IJAJNzQ38wdGCtGTCldCG4UTdwnLM"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -30,22 +34,19 @@ function App() {
         </button>
       </div>
 
-      {Object.entries(currentLocation).map(([key, value]) => (
-        <div key={key} className="info">
-          <Info
-            heading={key === "as" ? "" : key}
-            dataInfo={
-              typeof value === "object"
-                ? key === "location"
-                  ? Object.entries(value).map(([subKey, subValue]) =>
-                      subKey !== "timezone" ? `${" "}${subValue}` : ""
-                    )
-                  : ""
-                : value
-            }
-          />
-        </div>
-      ))}
+      <div>
+        {data && (
+          <>
+            <Info heading="ip" dataInfo={data.ip} />
+            <Info
+              heading="location"
+              dataInfo={`${data.location.region}, ${data.location.country}`}
+            />
+            <Info heading="timezone" dataInfo={data.location.timezone} />
+            <Info heading="isp" dataInfo={data.isp} />
+          </>
+        )}
+      </div>
     </>
   );
 }
