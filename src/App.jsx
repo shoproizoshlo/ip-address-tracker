@@ -5,14 +5,19 @@ import Info from "./components/Info";
 import locationService from "./service/location";
 
 function App() {
-  const [location, setLocation] = useState({});
+  const [currentLocation, setCurrentLocation] = useState([]);
 
   useEffect(() => {
     locationService
       .getAll()
       .then((initialLocation) => {
-        // console.log(initialLocation);
-        setLocation(initialLocation);
+        console.log(`IP Address ${initialLocation.ip}`);
+        console.log(
+          `Location ${initialLocation.location.country}, ${initialLocation.location.region}`
+        );
+        console.log(`Timezone ${initialLocation.location.timezone}`);
+        console.log(`isp ${initialLocation.isp}`);
+        setCurrentLocation(initialLocation);
       })
       .catch((error) => {
         console.log(error);
@@ -30,13 +35,14 @@ function App() {
           <img src={Arrow} alt="Arrow" />
         </button>
       </div>
-
-      {Object.keys(location).map((key) => (
-        <div key={key}>{`${key}: ${location[key]}`}</div>
-      ))}
-      <Info />
-      <Info />
-      <Info />
+      <p>IP Address {currentLocation.ip}</p>
+      <p>
+        Location
+        {Object.entries(currentLocation.location).map(([key, value]) => (
+          <div key={key}>{`${key}: ${value}`}</div>
+        ))}
+      </p>
+      <p>ISP {currentLocation.isp}</p>
       <Info />
     </>
   );
