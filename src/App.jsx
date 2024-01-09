@@ -11,12 +11,12 @@ function App() {
     locationService
       .getAll()
       .then((initialLocation) => {
-        console.log(`IP Address ${initialLocation.ip}`);
-        console.log(
-          `Location ${initialLocation.location.country}, ${initialLocation.location.region}`
-        );
-        console.log(`Timezone ${initialLocation.location.timezone}`);
-        console.log(`isp ${initialLocation.isp}`);
+        // console.log(`IP Address ${initialLocation.ip}`);
+        // console.log(
+        //   `Location ${initialLocation.location.country}, ${initialLocation.location.region}`
+        // );
+        // console.log(`Timezone ${initialLocation.location.timezone}`);
+        // console.log(`isp ${initialLocation.isp}`);
         setCurrentLocation(initialLocation);
       })
       .catch((error) => {
@@ -35,8 +35,22 @@ function App() {
           <img src={Arrow} alt="Arrow" />
         </button>
       </div>
-      <p>IP Address {currentLocation.ip}</p>
-      <p>ISP {currentLocation.isp}</p>
+
+      {Object.entries(currentLocation).map(([key, value]) => (
+        <div key={key}>
+          {`${key}: `}
+          {typeof value === "object" ? (
+            <ul>
+              {Object.entries(value).map(([subKey, subValue]) => (
+                <li key={subKey}>{`${subKey}: ${subValue}`}</li>
+              ))}
+            </ul>
+          ) : (
+            value
+          )}
+        </div>
+      ))}
+
       <Info />
     </>
   );
