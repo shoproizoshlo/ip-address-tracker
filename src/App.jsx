@@ -17,6 +17,7 @@ function App() {
         // );
         // console.log(`Timezone ${initialLocation.location.timezone}`);
         // console.log(`isp ${initialLocation.isp}`);
+        // console.log(initialLocation);
         setCurrentLocation(initialLocation);
       })
       .catch((error) => {
@@ -41,22 +42,13 @@ function App() {
           <Info
             heading={key}
             dataInfo={
-              typeof value === "object" ? (
-                key === "location" ? (
-                  <Info
-                    heading={key}
-                    dataInfo={Object.entries(value).map(
-                      ([subKey, subValue]) =>
-                        // <li key={subKey}>{`${subKey}: ${subValue}`}</li>
-                        subValue
-                    )}
-                  />
-                ) : (
-                  ""
-                )
-              ) : (
-                value
-              )
+              typeof value === "object"
+                ? key === "location"
+                  ? Object.entries(value).map(([subKey, subValue]) =>
+                      subKey !== "timezone" ? `${" "}${subValue}` : ""
+                    )
+                  : ""
+                : value
             }
           />
           {/* {`${key}: `}
