@@ -36,12 +36,6 @@ function App() {
         </button>
       </div>
       <p>IP Address {currentLocation.ip}</p>
-      <p>
-        Location
-        {Object.entries(currentLocation.location).map(([key, value]) => (
-          <div key={key}>{`${key}: ${value}`}</div>
-        ))}
-      </p>
       <p>ISP {currentLocation.isp}</p>
       <Info />
     </>
