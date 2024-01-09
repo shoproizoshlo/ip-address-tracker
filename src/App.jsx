@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className="background"></div>
-      <div className="map"></div>
+      <div className="map" id="map"></div>
       <h1>IP Address tracker </h1>
       <div>
         <input type="text" />
