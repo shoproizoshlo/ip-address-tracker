@@ -1,8 +1,8 @@
-const Info = () => {
+const Info = ({ heading, dataInfo }) => {
   return (
     <div>
-      <p>some text</p>
-      <p>another bigger text</p>
+      <p>{heading}</p>
+      <p>{dataInfo}</p>
     </div>
   );
 };

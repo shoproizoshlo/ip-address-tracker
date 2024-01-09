@@ -51,7 +51,7 @@ function App() {
         </div>
       ))}
 
-      <Info />
+      <Info heading={"heading"} dataInfo={"some data"} />
     </>
   );
 }
