@@ -11,13 +11,6 @@ function App() {
     locationService
       .getAll()
       .then((initialLocation) => {
-        // console.log(`IP Address ${initialLocation.ip}`);
-        // console.log(
-        //   `Location ${initialLocation.location.country}, ${initialLocation.location.region}`
-        // );
-        // console.log(`Timezone ${initialLocation.location.timezone}`);
-        // console.log(`isp ${initialLocation.isp}`);
-        // console.log(initialLocation);
         setCurrentLocation(initialLocation);
       })
       .catch((error) => {
@@ -38,9 +31,9 @@ function App() {
       </div>
 
       {Object.entries(currentLocation).map(([key, value]) => (
-        <div key={key}>
+        <div key={key} className="info">
           <Info
-            heading={key}
+            heading={key === "as" ? "" : key}
             dataInfo={
               typeof value === "object"
                 ? key === "location"
@@ -51,20 +44,8 @@ function App() {
                 : value
             }
           />
-          {/* {`${key}: `}
-          {typeof value === "object" ? (
-            <ul>
-              {Object.entries(value).map(([subKey, subValue]) => (
-                <li key={subKey}>{`${subKey}: ${subValue}`}</li>
-              ))}
-            </ul>
-          ) : (
-            value
-          )} */}
         </div>
       ))}
-
-      <Info heading={"heading"} dataInfo={"some data"} />
     </>
   );
 }
