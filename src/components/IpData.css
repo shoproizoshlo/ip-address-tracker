@@ -1,3 +1,7 @@
+:root {
+  --very-dark-fray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
 .background {
   position: relative;
   z-index: 1;
@@ -6,7 +10,7 @@
   height: 30%;
 }
 
-.info {
+.ip-data {
   position: absolute;
   top: 50%;
   left: 50%;

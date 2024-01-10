@@ -4,7 +4,7 @@ import "./IpData.css";
 
 const IpData = ({ data }) => {
   return (
-    <div className="info">
+    <div className="ip-data">
       <h1>IP Address tracker </h1>
       <div>
         <input type="text" />
@@ -23,7 +23,6 @@ const IpData = ({ data }) => {
             />
             <Info heading="timezone" dataInfo={data.location.timezone} />
             <Info heading="isp" dataInfo={data.isp} />
-            <Info heading="lat" dataInfo={data.location.lat} />
           </>
         )}
       </div>
