@@ -1,11 +1,11 @@
 :root {
-  --very-dark-fray: hsl(0, 0%, 17%);
+  --very-dark-gray: hsl(0, 0%, 17%);
   --dark-gray: hsl(0, 0%, 59%);
 }
 
 .ip-data {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -14,6 +14,22 @@
 
 .ip-data h1 {
   font-weight: 700;
-  font-size: 66px;
+  font-size: 45px;
   color: white;
+}
+
+.ip-data .search {
+  margin: 50px 0;
+}
+.ip-data input {
+  padding: 10px 20px;
+  height: 50px;
+  width: 550px;
+  border-radius: 15px 0 0 15px;
+}
+.ip-data button {
+  padding: 10px 20px;
+  height: 50px;
+  border-radius: 0 15px 15px 0;
+  background-color: var(--very-dark-gray);
 }

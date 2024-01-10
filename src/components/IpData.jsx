@@ -6,7 +6,7 @@ const IpData = ({ data }) => {
   return (
     <div className="ip-data">
       <h1>IP Address tracker </h1>
-      <div>
+      <div className="search">
         <input type="text" />
         <button>
           <img src={Arrow} alt="Arrow" />
