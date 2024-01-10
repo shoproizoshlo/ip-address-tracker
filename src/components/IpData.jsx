@@ -15,7 +15,7 @@ const IpData = ({ data }) => {
 
       <div>
         {data && (
-          <>
+          <div className="info-container">
             <Info heading="ip" dataInfo={data.ip} />
             <Info
               heading="location"
@@ -23,7 +23,7 @@ const IpData = ({ data }) => {
             />
             <Info heading="timezone" dataInfo={data.location.timezone} />
             <Info heading="isp" dataInfo={data.isp} />
-          </>
+          </div>
         )}
       </div>
     </div>

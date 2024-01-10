@@ -33,3 +33,7 @@
   border-radius: 0 15px 15px 0;
   background-color: var(--very-dark-gray);
 }
+
+.info-container {
+  display: flex;
+}

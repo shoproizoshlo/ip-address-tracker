@@ -1,0 +1,15 @@
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+.info {
+  padding: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  color: var(--very-dark-gray);
+  background-color: white;
+}
