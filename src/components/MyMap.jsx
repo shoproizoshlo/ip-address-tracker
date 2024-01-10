@@ -1,9 +1,19 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "./MyMap.css";
 
 const MyMap = ({ lat, lng }) => {
   const position = [lat, lng];
+
+  const customIcon = new L.DivIcon({
+    className: "custom-marker-icon",
+    html: '<i class="fa-solid fa-location-dot fa-2xl"></i>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+  });
 
   return (
     <div className="map" id="map">
@@ -16,8 +26,8 @@ const MyMap = ({ lat, lng }) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={position}>
-          <Popup>Your Location</Popup>
+        <Marker position={position} icon={customIcon}>
+          <Popup>A pretty CSS3 popup. Easily customizable.</Popup>
         </Marker>
       </MapContainer>
     </div>

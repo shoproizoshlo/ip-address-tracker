@@ -6,3 +6,10 @@
   position: relative;
   z-index: 1;
 }
+
+.custom-marker-icon {
+  text-align: center;
+  line-height: 32px;
+  color: black;
+  font-size: 36px;
+}
