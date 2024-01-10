@@ -7,7 +7,7 @@ const IpData = ({ data }) => {
     <div className="ip-data">
       <h1>IP Address tracker </h1>
       <div className="search">
-        <input type="text" />
+        <input type="text" placeholder="Search for any IP address or domain" />
         <button>
           <img src={Arrow} alt="Arrow" />
         </button>
@@ -16,7 +16,7 @@ const IpData = ({ data }) => {
       <div>
         {data && (
           <div className="info-container">
-            <Info heading="ip" dataInfo={data.ip} />
+            <Info heading="ip address" dataInfo={data.ip} />
             <Info
               heading="location"
               dataInfo={`${data.location.region}, ${data.location.country}`}
