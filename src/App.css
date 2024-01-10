@@ -9,7 +9,9 @@ main {
 
 .background,
 .map {
+  position: relative;
   height: 50%;
+  z-index: 1;
 }
 
 .info {
@@ -18,4 +20,22 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+}
+
+/* for responsive images */
+.background,
+.map {
+  flex: 0 0 33.3333%;
+  min-height: 150px;
+  overflow: hidden;
+}
+
+.background img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
