@@ -3,12 +3,17 @@
   --dark-gray: hsl(0, 0%, 59%);
 }
 
-
 .ip-data {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  text-align: center;
 }
 
+.ip-data h1 {
+  font-weight: 700;
+  font-size: 66px;
+  color: white;
+}
