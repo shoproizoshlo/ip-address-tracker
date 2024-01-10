@@ -5,9 +5,9 @@
 
 .ip-data {
   position: absolute;
-  top: 10%;
+  top: 30px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   z-index: 2;
   text-align: center;
 }
