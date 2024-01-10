@@ -1,3 +1,21 @@
-#map {
-  height: 180px;
+/* main take up the whole screen */
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 1 auto;
+}
+
+.background,
+.map {
+  height: 50%;
+}
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
