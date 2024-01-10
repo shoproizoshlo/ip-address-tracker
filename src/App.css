@@ -7,17 +7,16 @@ main {
   flex: 1 1 auto;
 }
 
-.background,
-.map {
+.background {
   position: relative;
   z-index: 1;
 }
 .background {
   height: 30%;
 }
-.map {
+/* .map {
   height: 70%;
-}
+} */
 
 .info {
   position: absolute;
@@ -28,8 +27,7 @@ main {
 }
 
 /* for responsive images */
-.background,
-.map {
+.background {
   flex: 0 0 33.3333%;
   min-height: 150px;
   overflow: hidden;

@@ -37,13 +37,13 @@ function App() {
           <img src={BgDesktop} alt="" />
         </picture>
       </div>
-      <div className="map" id="map">
-        {data && (
-          <>
-            <MyMap lat={data.location.lat} lng={data.location.lng} />
-          </>
-        )}
-      </div>
+
+      {data && (
+        <>
+          <MyMap lat={data.location.lat} lng={data.location.lng} />
+        </>
+      )}
+
       <div className="info">
         <h1>IP Address tracker </h1>
         <div>
