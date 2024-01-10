@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Arrow from "./assets/icon-arrow.svg";
 import Info from "./components/Info";
+import MyMap from "./components/MyMap";
 import "./App.css";
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://geo.ipify.org/api/v2/country?apiKey=at_IJAJNzQ38wdGCtGTCldCG4UTdwnLM"
+          "https://geo.ipify.org/api/v2/country,city?apiKey=at_IJAJNzQ38wdGCtGTCldCG4UTdwnLM"
         );
         setData(response.data);
+        console.log(data.location.lat);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -25,7 +27,10 @@ function App() {
   return (
     <>
       <div className="background"></div>
-      <div className="map" id="map"></div>
+      <div className="map" id="map">
+        <h1>Your Map</h1>
+        <MyMap lat={data.location.lat} lng={data.location.lng} />
+      </div>
       <h1>IP Address tracker </h1>
       <div>
         <input type="text" />
@@ -44,6 +49,7 @@ function App() {
             />
             <Info heading="timezone" dataInfo={data.location.timezone} />
             <Info heading="isp" dataInfo={data.isp} />
+            <Info heading="lat" dataInfo={data.location.lat} />
           </>
         )}
       </div>
