@@ -15,7 +15,6 @@ function App() {
           "https://geo.ipify.org/api/v2/country,city?apiKey=at_IJAJNzQ38wdGCtGTCldCG4UTdwnLM"
         );
         setData(response.data);
-        console.log(data.location.lat);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -28,8 +27,12 @@ function App() {
     <>
       <div className="background"></div>
       <div className="map" id="map">
-        <h1>Your Map</h1>
-        <MyMap lat={data.location.lat} lng={data.location.lng} />
+        {data && (
+          <>
+            <h1>Your Map</h1>
+            <MyMap lat={data.location.lat} lng={data.location.lng} />
+          </>
+        )}
       </div>
       <h1>IP Address tracker </h1>
       <div>
