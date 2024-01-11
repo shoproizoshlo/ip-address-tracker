@@ -26,13 +26,33 @@ main {
   left: 0;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 1200px) {
   .background {
-    height: 55%;
+    height: 40%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1200px) {
   .background {
-    height: 50%;
+    height: 35%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .background {
+    height: 30%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .background {
+    height: 35%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .background {
+    /* height: 40%; */
+  }
+}
+@media screen and (max-width: 400px) {
+  .background {
+    height: 30%;
   }
 }
