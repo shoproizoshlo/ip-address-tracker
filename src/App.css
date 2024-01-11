@@ -10,7 +10,7 @@ main {
 .background {
   position: relative;
   z-index: 1;
-  height: 20%;
+  height: 35%;
   flex: 0 0 33.3333%;
   min-height: 150px;
   overflow: hidden;
@@ -24,35 +24,4 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-@media screen and (min-width: 1200px) {
-  .background {
-    height: 35%;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .background {
-    height: 35%;
-  }
-}
-@media screen and (max-width: 992px) {
-  .background {
-    height: 30%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .background {
-    height: 35%;
-  }
-}
-@media screen and (max-width: 750px) {
-  .background {
-    /* height: 40%; */
-  }
-}
-@media screen and (max-width: 400px) {
-  .background {
-    height: 30%;
-  }
 }
