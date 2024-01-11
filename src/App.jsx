@@ -27,6 +27,11 @@ function App() {
     fetchData();
   }, [ipAddress]);
 
+  const handleIpChange = (e) => {
+    e.preventDefault();
+    setIpAddress(e.target.value);
+  };
+
   return (
     <>
       <div className="background">
@@ -46,7 +51,11 @@ function App() {
         </>
       )}
 
-      <IpData data={data} handleIpChange={(event) => setIpAddress(event.target.value)}/>
+      <IpData
+        data={data}
+        ipAddress={ipAddress}
+        handleIpChange={handleIpChange}
+      />
     </>
   );
 }

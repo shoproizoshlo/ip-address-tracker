@@ -7,15 +7,17 @@ const IpData = ({ data, ipAddress, handleIpChange }) => {
     <div className="ip-data">
       <h1>IP Address tracker </h1>
       <div className="search">
-        <input
-          type="text"
-          placeholder="Search for any IP address or domain"
-          value={ipAddress}
-          onChange={handleIpChange}
-        />
-        <button>
-          <img src={Arrow} alt="Arrow" />
-        </button>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            placeholder="Search for any IP address or domain"
+            value={ipAddress}
+            onChange={handleIpChange}
+          />
+          <button>
+            <img src={Arrow} alt="Arrow" />
+          </button>
+        </form>
       </div>
 
       <div>
