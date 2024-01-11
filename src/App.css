@@ -28,7 +28,7 @@ main {
 
 @media screen and (min-width: 1200px) {
   .background {
-    height: 40%;
+    height: 35%;
   }
 }
 @media screen and (max-width: 1200px) {
