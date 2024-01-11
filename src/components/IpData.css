@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 992px) {
   .ip-data .search {
-    margin: 10% 0;
+    margin: 5% 0;
   }
   .info-container {
     padding: 20px;
@@ -82,6 +82,9 @@
   }
 }
 @media screen and (max-width: 580px) {
+  .ip-data .search {
+    margin: 10% 0;
+  }
   .ip-data input {
     width: 80%;
   }
