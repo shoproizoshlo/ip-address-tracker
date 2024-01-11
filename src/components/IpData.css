@@ -72,3 +72,25 @@
     width: 400px;
   }
 }
+@media screen and (max-width: 900px) {
+  .ip-data {
+    width: 90%;
+  }
+
+  .ip-data input {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .ip-data input {
+    width: 80%;
+  }
+  .ip-data h1 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .ip-data input {
+    width: 70%;
+  }
+}
