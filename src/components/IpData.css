@@ -19,18 +19,25 @@
 }
 
 .ip-data .search {
-  margin: 50px 0;
+  margin: 7% 0;
 }
 .ip-data input {
   padding: 10px 20px;
   height: 50px;
   width: 550px;
   border-radius: 15px 0 0 15px;
+  box-shadow: 0px 10px 20px rgba(43, 43, 43, 0.2);
+  color: var(--very-dark-gray);
 }
 .ip-data button {
   padding: 10px 20px;
   height: 50px;
   border-radius: 0 15px 15px 0;
+  background-color: black;
+  box-shadow: 0px 10px 20px rgba(43, 43, 43, 0.2);
+}
+.ip-data button:hover,
+.ip-data button:active {
   background-color: var(--very-dark-gray);
 }
 
@@ -40,5 +47,28 @@
   overflow: hidden;
   color: var(--very-dark-gray);
   background-color: white;
-  /* position: relative; */
+  box-shadow: 0px 10px 20px rgba(43, 43, 43, 0.2);
+}
+
+@media screen and (max-width: 1050px) {
+  .ip-data .search {
+    margin: 10% 0;
+  }
+  .ip-data h1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ip-data .search {
+    margin: 10% 0;
+  }
+  .info-container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ip-data input {
+    width: 400px;
+  }
 }
