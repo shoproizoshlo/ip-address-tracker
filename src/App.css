@@ -25,3 +25,14 @@ main {
   top: 0;
   left: 0;
 }
+
+@media screen and (max-width: 992px) {
+  .background {
+    height: 55%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .background {
+    height: 50%;
+  }
+}
