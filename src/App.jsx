@@ -10,12 +10,13 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState(null);
+  const [ipAddress, setIpAddress] = useState("8.8.8.8");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://geo.ipify.org/api/v2/country,city?apiKey=at_eyN4KS9E4bmAxNdWa1jB0HEj6T4Oc"
+          `https://geo.ipify.org/api/v2/country,city?apiKey=at_BxswHR82Y6xar2WCrknG83SkjVZhD&ipAddress=${ipAddress}`
         );
         setData(response.data);
       } catch (error) {
@@ -24,7 +25,7 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [ipAddress]);
 
   return (
     <>
@@ -45,7 +46,7 @@ function App() {
         </>
       )}
 
-      <IpData data={data} />
+      <IpData data={data} handleIpChange={(event) => setIpAddress(event.target.value)}/>
     </>
   );
 }

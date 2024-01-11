@@ -2,12 +2,17 @@ import Info from "./Info";
 import Arrow from "../assets/icon-arrow.svg";
 import "./IpData.css";
 
-const IpData = ({ data }) => {
+const IpData = ({ data, ipAddress, handleIpChange }) => {
   return (
     <div className="ip-data">
       <h1>IP Address tracker </h1>
       <div className="search">
-        <input type="text" placeholder="Search for any IP address or domain" />
+        <input
+          type="text"
+          placeholder="Search for any IP address or domain"
+          value={ipAddress}
+          onChange={handleIpChange}
+        />
         <button>
           <img src={Arrow} alt="Arrow" />
         </button>
