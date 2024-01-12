@@ -4,7 +4,7 @@ import "./IpData.css";
 
 const IpData = ({ data, ipAddress, handleIpChange }) => {
   return (
-    <div className="ip-data">
+    <div className="absolute top-8 left-2/4	transform -translate-x-1/2 z-2 text-center">
       <h1>IP Address tracker </h1>
       <div className="search">
         <form onSubmit={(e) => e.preventDefault()}>
