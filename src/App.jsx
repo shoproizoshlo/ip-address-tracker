@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Arrow from "./assets/icon-arrow.svg";
 import BgDesktop from "./assets/pattern-bg-desktop.png";
 import BgMobile from "./assets/pattern-bg-mobile.png";
 import IpData from "./components/IpData";
-import Info from "./components/Info";
 import MyMap from "./components/MyMap";
 import "./App.css";
 
