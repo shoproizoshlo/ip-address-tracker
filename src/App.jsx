@@ -32,15 +32,12 @@ function App() {
 
   return (
     <>
-      <div className="background">
-        <picture>
-          <source
-            srcSet={BgMobile}
-            type="image/jpg"
-            media="(max-width:992px)"
-          />
-          <img src={BgDesktop} alt="" />
-        </picture>
+      <div className="relative z-1 h-2/6 overflow-x-hidden">
+        <img
+          src={BgDesktop}
+          alt=""
+          className="w-full	h-full absolute top-0	left-0	object-cover	object-center"
+        />
       </div>
 
       {data && (
